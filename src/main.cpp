@@ -1,5 +1,5 @@
 // 	Built with DPP
-//		> clone https://github.com/brainboxdotcc/DPP
+//		> git clone https://github.com/brainboxdotcc/DPP
 //
 //	Installed OpenSSL development files for discord dnd bot
 //		> sudo apt install libssl-dev
@@ -26,3 +26,15 @@ int main() {
  *		> export $(grep -v '^#' ../.env | xargs) && ./breadDnDBot
  *
  * */
+
+/*
+	Reminder to self, in vps server:
+
+	>	tmux new -s dndbot
+	> 	./build/breadDndBot
+	CTRL+B then D
+	
+	To resume
+	>	tmux attach -t dndbot
+
+*/
