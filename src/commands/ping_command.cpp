@@ -1,5 +1,7 @@
-#include "commands/ping_command.h"
+#include "commands/ping_command.hpp"
 
-void handlePing(const dpp::slashcommand_t& event) {
-	event.reply("Pong :3");
+namespace ping_command {
+	void handlePing(const dpp::slashcommand_t& event) {
+		event.reply("Pong :3");
+	}
 }

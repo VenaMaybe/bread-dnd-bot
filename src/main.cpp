@@ -1,6 +1,9 @@
 // 	Built with DPP
 //		> git clone https://github.com/brainboxdotcc/DPP
 //
+//	Built with nlohmann/json headers
+//		> wget -O json.hpp https://github.com/nlohmann/json/releases/latest/download/json.hpp
+//
 //	Installed OpenSSL development files for discord dnd bot
 //		> sudo apt install libssl-dev
 //	
@@ -8,7 +11,7 @@
 //		> cmake -B build .
 //		> cmake --build build --config Release
 
-#include "bot.h"
+#include "bot.hpp"
 #include <cstdlib>
 
 int main() {

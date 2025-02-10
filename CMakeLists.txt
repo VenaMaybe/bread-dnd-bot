@@ -12,7 +12,7 @@ link_directories(/usr/local/lib)
 
 # Automatically collect all source and header files
 file(GLOB_RECURSE SRC_FILES "src/*.cpp")
-file(GLOB_RECURSE HEADER_FILES "include/*.h")
+file(GLOB_RECURSE HEADER_FILES "include/*.hpp")
 
 # For now just compile main.cpp
 add_executable(breadDnDBot ${SRC_FILES} ${HEADER_FILES})
