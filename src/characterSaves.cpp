@@ -11,9 +11,13 @@ void save_characters(const std::string& filename) {
 
 	// For every character 
 	for (auto& [user_id, character] : character_map) {
+		// Force a call from the templated to_json convertor
+		nlohmann::json createdByJson;
+		to_json(createdByJson, character.createdBy);
+
 		std::cout << user_id << "\t" << character.name << std::endl;
-		j[std::to_string(user_id)] = {
-			{"createdBy", to_json(character.createdBy)},
+		j[std::to_string(user_id)] = nlohmann::json {
+			{"createdBy", createdByJson},
 			{"characterID", character.characterID},
 			{"name", character.name},
 			{"hp", character.hp}
@@ -47,7 +51,7 @@ void load_characters(const std::string& filename) {
 		Character c;
 
 		// Deserialize the fieldssss
-		c.createdBy = from_json(it.value().at("createdBy")); // Kinda fucked cuz it's a standalone function
+		c.createdBy = it.value().at("createdBy").get<dpp::user>(); // Kinda fucked cuz it's a standalone function
 		c.characterID = it.value().at("characterID").get<uint64_t>();
 		c.name = it.value().at("name").get<std::string>();
 		c.hp = it.value().at("hp").get<int>();
