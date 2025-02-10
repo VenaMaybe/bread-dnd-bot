@@ -27,9 +27,7 @@ void Bot::run() {
 // Register all commands
 void Bot::registerCommands() {
 	// Ping
-	bot_.global_command_create(
-		dpp::slashcommand("ping", "Ping command", bot_.me.id)
-	);
+	ping_command::register_command(bot_);
 	// Dice
 	dice_command::register_command(bot_);
 }

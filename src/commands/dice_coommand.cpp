@@ -3,22 +3,24 @@
 
 namespace dice_command {
 	void register_command(dpp::cluster& bot) {
-		bot.global_command_create(
-			dpp::slashcommand(commandName, "Dice command", bot.me.id)
-				.add_option(
-					dpp::command_option(dpp::co_integer, "dice", "Type of dice to roll", true)
-						.add_choice(dpp::command_option_choice("d4", 	4))
-						.add_choice(dpp::command_option_choice("d6", 	6))
-						.add_choice(dpp::command_option_choice("d8", 	8))
-						.add_choice(dpp::command_option_choice("d10",	10))
-						.add_choice(dpp::command_option_choice("d12",	12))
-						.add_choice(dpp::command_option_choice("d20", 	20))
-						.add_choice(dpp::command_option_choice("d100", 	100))
-				)
-				.add_option(
-					dpp::command_option(dpp::co_integer, "count", "Number of dice to roll", true)
-				)
+		dpp::slashcommand command(commandName, "Dice command", bot.me.id);
+
+		command.add_option(
+			dpp::command_option(dpp::co_integer, "dice", "Type of dice to roll", true)
+				.add_choice(dpp::command_option_choice("d4", 	4))
+				.add_choice(dpp::command_option_choice("d6", 	6))
+				.add_choice(dpp::command_option_choice("d8", 	8))
+				.add_choice(dpp::command_option_choice("d10",	10))
+				.add_choice(dpp::command_option_choice("d12",	12))
+				.add_choice(dpp::command_option_choice("d20", 	20))
+				.add_choice(dpp::command_option_choice("d100", 	100))
 		);
+
+		command.add_option(
+			dpp::command_option(dpp::co_integer, "count", "Number of dice to roll", true)
+		);
+
+		bot.global_command_create(command);
 	}
 
 	void handleDice(const dpp::slashcommand_t& event) {
