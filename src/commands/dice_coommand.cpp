@@ -3,7 +3,7 @@
 
 namespace dice_command {
 	void register_command(dpp::cluster& bot) {
-		dpp::slashcommand command(commandName, "Dice command", bot.me.id);
+		dpp::slashcommand command(commandName, "Roll some dice", bot.me.id);
 
 		command.add_option(
 			dpp::command_option(dpp::co_integer, "dice", "Type of dice to roll", true)

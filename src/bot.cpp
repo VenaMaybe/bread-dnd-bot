@@ -1,7 +1,9 @@
 #include "bot.hpp"
 #include "commands/ping_command.hpp"
 #include "commands/dice_command.hpp"
+#include "commands/character_commands.hpp"
 
+// Create the bot
 Bot::Bot(const std::string& token)
 	: bot_(token) {
 	
@@ -20,16 +22,18 @@ Bot::Bot(const std::string& token)
 	});
 }
 
+// Start the bot
 void Bot::run() {
 	bot_.start(dpp::st_wait);
 }
 
 // Register all commands
 void Bot::registerCommands() {
-	// Ping
 	ping_command::register_command(bot_);
-	// Dice
 	dice_command::register_command(bot_);
+	create_character_command::register_command(bot_);
+	view_character_command::register_command(bot_);
+	edit_character_command::register_command(bot_);
 }
 
 // Set all the callbacks
@@ -40,5 +44,11 @@ void Bot::onSlashCommand(const dpp::slashcommand_t& event) {
 		ping_command::handlePing(event);
 	} else if (cmd == dice_command::commandName) {
 		dice_command::handleDice(event);
+	} else if (cmd == create_character_command::commandName) {
+		create_character_command::handle_command(event);
+	} else if (cmd == view_character_command::commandName) {
+		view_character_command::handle_command(event);
+	} else if (cmd == edit_character_command::commandName) {
+		edit_character_command::handle_command(event);
 	}
 }

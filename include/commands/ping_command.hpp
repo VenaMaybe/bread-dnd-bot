@@ -9,6 +9,6 @@ namespace ping_command {
 	// Handles registration of the dice command and its options
 	void register_command(dpp::cluster& bot);
 
-	// A function to handle the command
+	// Handles invocation of ping command
 	void handlePing(const dpp::slashcommand_t& event);
 }

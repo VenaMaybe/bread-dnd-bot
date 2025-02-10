@@ -8,6 +8,6 @@ namespace ping_command {
 	}
 
 	void handlePing(const dpp::slashcommand_t& event) {
-		event.reply("Pong :3");
+		event.reply("Pong :3 v1.2");
 	}
 }

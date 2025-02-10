@@ -12,6 +12,7 @@
 //		> cmake --build build --config Release
 
 #include "bot.hpp"
+#include "characterSaves.hpp"
 #include <cstdlib>
 
 int main() {
@@ -19,9 +20,13 @@ int main() {
 	if (token == nullptr) { throw std::runtime_error("Error: No token found in enviornment!"); }
 	std::string token_s(token);
 
+	load_characters(characterJSONpath);
+
 	Bot rat(token_s);
 	rat.run();
 
+	save_characters(characterJSONpath);
+	std::cout << "Bye bye!\n";
 	return 0;
 }
 
