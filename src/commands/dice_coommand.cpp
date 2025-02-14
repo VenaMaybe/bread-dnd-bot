@@ -23,7 +23,7 @@ namespace dice_command {
 		bot.global_command_create(command);
 	}
 
-	void handleDice(const dpp::slashcommand_t& event) {
+	void handle_command(const dpp::slashcommand_t& event) {
 		// Grab the user input
 		int64_t diceValue = std::get<int64_t>(event.get_parameter("dice"));
 		int64_t diceCount = std::get<int64_t>(event.get_parameter("count"));

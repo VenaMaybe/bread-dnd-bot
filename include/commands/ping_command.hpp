@@ -10,5 +10,5 @@ namespace ping_command {
 	void register_command(dpp::cluster& bot);
 
 	// Handles invocation of ping command
-	void handlePing(const dpp::slashcommand_t& event);
+	void handle_command(const dpp::slashcommand_t& event);
 }

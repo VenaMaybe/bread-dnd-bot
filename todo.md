@@ -1,0 +1,1 @@
+Make a command to display everyone's characters!

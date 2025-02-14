@@ -1,4 +1,31 @@
 {
+    "292791516072640522": {
+        "characterID": 292791516072640522,
+        "createdBy": {
+            "id": "292791516072640522",
+            "username": "theuwufurry"
+        },
+        "hp": 1410065408,
+        "name": "humugus"
+    },
+    "301774808167743489": {
+        "characterID": 301774808167743489,
+        "createdBy": {
+            "id": "301774808167743489",
+            "username": "honchokomodo"
+        },
+        "hp": 10,
+        "name": "chicken"
+    },
+    "393422059117740033": {
+        "characterID": 393422059117740033,
+        "createdBy": {
+            "id": "393422059117740033",
+            "username": "wholewhatbread"
+        },
+        "hp": 777,
+        "name": "K8linne"
+    },
     "444296172992200716": {
         "characterID": 444296172992200716,
         "createdBy": {

@@ -7,7 +7,7 @@ namespace ping_command {
 		);
 	}
 
-	void handlePing(const dpp::slashcommand_t& event) {
+	void handle_command(const dpp::slashcommand_t& event) {
 		event.reply("Pong :3 v1.2");
 	}
 }

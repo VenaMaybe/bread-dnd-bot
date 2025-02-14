@@ -10,5 +10,5 @@ namespace dice_command {
 	void register_command(dpp::cluster& bot);
 
 	// Handles invocation of dice command
-	void handleDice(const dpp::slashcommand_t& event);
+	void handle_command(const dpp::slashcommand_t& event);
 }

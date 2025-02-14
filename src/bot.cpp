@@ -41,9 +41,9 @@ void Bot::onSlashCommand(const dpp::slashcommand_t& event) {
 	const std::string& cmd = event.command.get_command_name();
 
 	if (cmd == ping_command::commandName) {
-		ping_command::handlePing(event);
+		ping_command::handle_command(event);
 	} else if (cmd == dice_command::commandName) {
-		dice_command::handleDice(event);
+		dice_command::handle_command(event);
 	} else if (cmd == create_character_command::commandName) {
 		create_character_command::handle_command(event);
 	} else if (cmd == view_character_command::commandName) {
