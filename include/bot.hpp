@@ -20,3 +20,29 @@ private:
 	// Callbacks for slash commands
 	void onSlashCommand(const dpp::slashcommand_t& event);
 };
+
+/*
+
+/ping()
+	Pings the bot
+
+/roll(dice, amt)
+	Rolls some dnd dice
+
+/create_character(name, health)
+	Creates or augments a user's character with a name and health
+
+/edit_character(name, health)
+	Edits a character
+
+/view_character()
+	Prints character info
+
+
+
+
+
+
+	
+	
+*/

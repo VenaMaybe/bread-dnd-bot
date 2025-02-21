@@ -12,12 +12,12 @@ void save_characters(const std::string& filename) {
 	// For every character 
 	for (auto& [user_id, character] : character_map) {
 		// Force a call from the templated to_json convertor
-		nlohmann::json createdByJson;
-		to_json(createdByJson, character.createdBy);
+		nlohmann::json createdBy_Json;
+		to_json(createdBy_Json, character.createdBy);
 
 		std::cout << user_id << "\t" << character.name << std::endl;
 		j[std::to_string(user_id)] = nlohmann::json {
-			{"createdBy", createdByJson},
+			{"createdBy", createdBy_Json},
 			{"characterID", character.characterID},
 			{"name", character.name},
 			{"hp", character.hp}
