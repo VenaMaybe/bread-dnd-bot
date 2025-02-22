@@ -1,21 +1,15 @@
 #pragma once
 
-#include <string>
+#include "util/graph.hpp"
+#include "world_gen/dungeonNodePath.hpp"
 
-class Node {
-
-};
-
-class Edge {
-
-};
 
 // Graph of nodes and edges
 class Dungeon {
+public:
+	void generate();
 
-};
-
-class DungeonGenerator {
+	Graph<DungeonNode, DungeonPath> dungeonGraph;
 
 };
 

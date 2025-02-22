@@ -6,6 +6,13 @@
 #include <utility> // for std::pair
 #include <iostream> // for std::cout
 
+#include <json.hpp>	// for json, duh
+#include <fstream> // for std::ofstream
+/* Make sure to define to_json() for custom types!!! */
+using json = nlohmann::json;
+
+#include <python3.10/Python.h> // for graph visualization
+
 //
 template <class T>
 class Vertex {
@@ -111,6 +118,54 @@ public:
 		}
 	}
 
+	//////////////////////////////
+	// Json Saving Method		//
+	//////////////////////////////
+	void exploreGraphToJson(const std::string& filepath) {
+		// Json object that represents the graph
+		json j;
+
+		// Loop through all the verts
+		for (const auto& vertex : getVertices()) {
+			// Copium pray the object can be stored in a json file
+			j["vertices"].push_back(vertex->getObjAtVert());
+		}
+
+		// Loop through all the edges
+		for (const auto& edge : getEdges()) {
+			json edgeJson;
+			edgeJson["from"] = edge->getV1()->getObjAtVert();
+			edgeJson["to"] = edge->getV2()->getObjAtVert();
+			edgeJson["weight"] = edge->getObjOnEdge();
+			j["edges"].push_back(edgeJson);
+		}
+
+		// Write it out
+		std::ofstream outFile(filepath);
+		outFile << j.dump(4);
+		outFile.close();
+	}
+
+	//////////////////////////////
+	// Python Graph Visualizer  //
+	//////////////////////////////
+	void runPythonVisualization() {
+		// Initalized the interpreter
+		Py_Initialize();
+
+		// Append the current directory to the system path
+		PyRun_SimpleString("import sys\nsys.path.append('.')\n");
+
+		// Inside visualize_graph.py runs main() function
+		const char* command =
+			"import visualize_graph\n"
+			"visualize_graph.main()\n";
+		PyRun_SimpleString(command);
+
+		// Finalize the interpreter
+		Py_Finalize();
+	}
+
 	// Later add remove edge and remove vert functions
 
 private:
@@ -123,3 +178,6 @@ private:
 	// 		In this case, the tuples are just represented by the Edge Type
 	std::unordered_map<Vertex<T>*, std::vector<Edge<U, T>*>> adjacencyList;
 };
+
+/**//**//**//**//**//**//**/
+

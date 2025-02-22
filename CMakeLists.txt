@@ -14,6 +14,9 @@ link_directories(/usr/local/lib)
 file(GLOB_RECURSE SRC_FILES "src/*.cpp")
 file(GLOB_RECURSE HEADER_FILES "include/*.hpp")
 
+# Find the python interpreter and libraries
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+
 # For now just compile main.cpp
 add_executable(breadDnDBot ${SRC_FILES} ${HEADER_FILES})
 
@@ -21,4 +24,7 @@ add_executable(breadDnDBot ${SRC_FILES} ${HEADER_FILES})
 target_include_directories(breadDnDBot PRIVATE include)
 
 # Link DPP
-target_link_libraries(breadDnDBot dpp)
+# target_link_libraries(breadDnDBot dpp)
+
+# Link against the Python libraries
+target_link_libraries(breadDnDBot PRIVATE dpp Python3::Python)

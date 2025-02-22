@@ -1,0 +1,408 @@
+{
+    "edges": [
+        {
+            "from": {
+                "id": 0,
+                "name": "Entrance Room"
+            },
+            "to": {
+                "id": 1,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 2,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 1,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 3,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 4,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 3,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 5,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 6,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 5,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 7,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 8,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 5,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 9,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 10,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 9,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 11,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 12,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 11,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 13,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 14,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 13,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 15,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 16,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 13,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 0,
+                "name": "Entrance Room"
+            },
+            "weight": {
+                "id": 17,
+                "name": "return"
+            }
+        },
+        {
+            "from": {
+                "id": 9,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 18,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 19,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 18,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 20,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 21,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 18,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 0,
+                "name": "Entrance Room"
+            },
+            "weight": {
+                "id": 22,
+                "name": "return"
+            }
+        },
+        {
+            "from": {
+                "id": 20,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 23,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 24,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 23,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 25,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 26,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 23,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 0,
+                "name": "Entrance Room"
+            },
+            "weight": {
+                "id": 27,
+                "name": "return"
+            }
+        },
+        {
+            "from": {
+                "id": 23,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 28,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 29,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 28,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 30,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 31,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 30,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 32,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 33,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 30,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 34,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 35,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 9,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 36,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 37,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 9,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 0,
+                "name": "Entrance Room"
+            },
+            "weight": {
+                "id": 38,
+                "name": "return"
+            }
+        },
+        {
+            "from": {
+                "id": 5,
+                "name": "Combat Room"
+            },
+            "to": {
+                "id": 39,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 40,
+                "name": "hallway"
+            }
+        },
+        {
+            "from": {
+                "id": 0,
+                "name": "Entrance Room"
+            },
+            "to": {
+                "id": 41,
+                "name": "Combat Room"
+            },
+            "weight": {
+                "id": 42,
+                "name": "hallway"
+            }
+        }
+    ],
+    "vertices": [
+        {
+            "id": 0,
+            "name": "Entrance Room"
+        },
+        {
+            "id": 1,
+            "name": "Combat Room"
+        },
+        {
+            "id": 3,
+            "name": "Combat Room"
+        },
+        {
+            "id": 5,
+            "name": "Combat Room"
+        },
+        {
+            "id": 7,
+            "name": "Combat Room"
+        },
+        {
+            "id": 9,
+            "name": "Combat Room"
+        },
+        {
+            "id": 11,
+            "name": "Combat Room"
+        },
+        {
+            "id": 13,
+            "name": "Combat Room"
+        },
+        {
+            "id": 15,
+            "name": "Combat Room"
+        },
+        {
+            "id": 18,
+            "name": "Combat Room"
+        },
+        {
+            "id": 20,
+            "name": "Combat Room"
+        },
+        {
+            "id": 23,
+            "name": "Combat Room"
+        },
+        {
+            "id": 25,
+            "name": "Combat Room"
+        },
+        {
+            "id": 28,
+            "name": "Combat Room"
+        },
+        {
+            "id": 30,
+            "name": "Combat Room"
+        },
+        {
+            "id": 32,
+            "name": "Combat Room"
+        },
+        {
+            "id": 34,
+            "name": "Combat Room"
+        },
+        {
+            "id": 36,
+            "name": "Combat Room"
+        },
+        {
+            "id": 39,
+            "name": "Combat Room"
+        },
+        {
+            "id": 41,
+            "name": "Combat Room"
+        }
+    ]
+}
