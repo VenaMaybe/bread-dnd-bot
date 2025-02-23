@@ -13,7 +13,8 @@ def main():
 	# Add vertices using the vertex id as the node and storing the name as an attribute
 	for vertex in data.get("vertices", []):
 		node_id = vertex["id"]
-		G.add_node(node_id, name=vertex["name"])
+		color = vertex.get("color", "lightblue") # Default is lightblue
+		G.add_node(node_id, name=vertex["name"], color=color)
 	
 	# Add edges using the id from the "from" and "to" vertices
 	for edge in data.get("edges", []):
@@ -21,7 +22,8 @@ def main():
 		to_id = edge["to"]["id"]
 		# Assuming "weight" contains a dictionary with a "name" key for the label
 		label = edge["weight"]["name"]
-		G.add_edge(from_id, to_id, label=label)
+		edge_id = edge["weight"]["id"]
+		G.add_edge(from_id, to_id, label=label, edge_id=edge_id)
 
 	# Make the figure bigger
 	plt.figure(figsize=(12, 8))
@@ -33,8 +35,11 @@ def main():
 	# Create a dictionary for node degrees to dynamically size them based off their degree
 	degrees = dict(G.degree)
 
-	# Create a dictionary mapping node ID to vertex name
-	labels = nx.get_node_attributes(G, 'name');
+	# Create a list of colors for the nodes based on the "color" attribute
+	node_colors = [G.nodes[node]["color"] for node in G.nodes]
+
+	# Create a dictionary mapping node ID to vertex label that includes the index
+	labels = {node: f"{G.nodes[node]['name']}\n{node}" for node in G.nodes()}
 
 	# Draw the graph using vertex names and labels
 	nx.draw(
@@ -42,14 +47,22 @@ def main():
 		pos, 
 		labels=labels,
 		with_labels=True, 
-		node_color='lightblue', 
+		node_color=node_colors, 
 		font_size=6,
-		nodelist=degrees,
+		nodelist=list(degrees),
 		node_size=[degrees[k]*100 for k in degrees])
 	
-	# Draw edge labels
-	edge_labels = nx.get_edge_attributes(G, 'label')
-	nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size= 6)
+	# Original edge labels from the graph attribute "label"
+	edge_labels = {
+		(startNode, endNode): f"{d['label']}\nID: {d['edge_id']}" for startNode, endNode, d in G.edges(data=True)
+	}
+
+	# Draw the labels for the edges
+	nx.draw_networkx_edge_labels(
+		G, 
+		pos, 
+		edge_labels=edge_labels, 
+		font_size= 6)
 	
 	plt.show()
 

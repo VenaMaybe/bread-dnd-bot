@@ -119,7 +119,7 @@ public:
 	}
 	const int getDegree(Vertex<T>* v) const {
 		// We assume v exists
-		return adjacencyList.at(v).size()
+		return adjacencyList.at(v).size();
 	}
 
 	//////////////////////////////

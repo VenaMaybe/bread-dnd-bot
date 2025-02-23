@@ -12,4 +12,8 @@ private:
 public:
 	// Generate a random integer within a given range
 	static int getRandomInt(int min, int max);
+
+	// Generate a boolean based on a percentage chance
+	// For example, passing 70 returns true ~70% of the time
+	static bool getBernoulliGate(double percentage);
 };
