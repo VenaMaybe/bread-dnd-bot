@@ -17,24 +17,39 @@ def main():
 	
 	# Add edges using the id from the "from" and "to" vertices
 	for edge in data.get("edges", []):
-		from_id = edge["from"]["id"]
+		from_id = edge["from"]["id"] # Using name instead of id
 		to_id = edge["to"]["id"]
 		# Assuming "weight" contains a dictionary with a "name" key for the label
 		label = edge["weight"]["name"]
 		G.add_edge(from_id, to_id, label=label)
+
+	# Make the figure bigger
+	plt.figure(figsize=(12, 8))
 	
+	# How the positions are calculated
 	pos = nx.spring_layout(G, scale=20, k=3/np.sqrt(G.order()),
 				iterations=300)
 
-	d = dict(G.degree)
-	nx.draw(G, pos, with_labels=True, node_color='lightblue', 
-				font_size=8,
-		 		nodelist=d,
-				node_size=[d[k]*100 for k in d])
+	# Create a dictionary for node degrees to dynamically size them based off their degree
+	degrees = dict(G.degree)
+
+	# Create a dictionary mapping node ID to vertex name
+	labels = nx.get_node_attributes(G, 'name');
+
+	# Draw the graph using vertex names and labels
+	nx.draw(
+		G, 
+		pos, 
+		labels=labels,
+		with_labels=True, 
+		node_color='lightblue', 
+		font_size=6,
+		nodelist=degrees,
+		node_size=[degrees[k]*100 for k in degrees])
 	
 	# Draw edge labels
 	edge_labels = nx.get_edge_attributes(G, 'label')
-	nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+	nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size= 6)
 	
 	plt.show()
 
