@@ -1,6 +1,7 @@
 #include <stack>
 #include <vector>
 #include "util/random.hpp"
+#include "util/print_stack.hpp"
 #include "world_gen/dungeon.hpp"
 
 void Dungeon::generate() {
@@ -20,7 +21,15 @@ void Dungeon::generate() {
 		// }
 	};
 
+
 	// Manages dungeon expansion
+	/*	Every node on the stack is a candidate for further extension
+	 * 
+	 *	The top node is actively being considered for expansion
+	 *
+	 * 	Popped nodes are dead ends
+	 *
+	 * */
 	std::stack<Vertex<DungeonNode>*> nodeStack;
 
 	EntranceNode entrance;
@@ -30,17 +39,39 @@ void Dungeon::generate() {
 	// Some settings
 	const int MAX_NODES = 20;
 	const int MIN_NODES = 5;
+	int minimumNodesBeforeSplit = Random::getRandomInt(2, 4);
+
+	// Some counts
 	int nodeCount = 1;
+	int expansionDepth = 0;
+
+	// Inital state
+	printStack(nodeStack);
 
 	while (!nodeStack.empty() && nodeCount < MAX_NODES) {
 		// Get the current node at the top of the stack
 		Vertex<DungeonNode>* current = nodeStack.top();
 
-		// Expand the node by creating a new room
-		if (Random::getBernoulliGate(100)) {
+		// Get the node type for the current node
+		const NodeType& currentNodeType = current->getObjAtVert().getNodeType();
+
+		// Decide whether or not a node should be expanded
+		bool shouldSplit; 
+
+		// Check whether or not to expand again
+		if (expansionDepth < minimumNodesBeforeSplit) {
+			// Definitely true
+			shouldSplit = false;
+		} else {
+			// Might be false
+			shouldSplit = Random::getBernoulliGate(50); // prob of splitting
+		}
+
+		// Expand the node by creating a new room if shouldn't split
+		if (!shouldSplit) {
 			Vertex<DungeonNode>* newNode = nullptr;
 			
-			// switch statement here later
+			// Determine room type
 			if (Random::getBernoulliGate(75)) {
 				// 50% chance to just make a combat room
 				newNode = dungeonGraph.addVertex(CombatNode());
@@ -51,32 +82,51 @@ void Dungeon::generate() {
 				newNode = dungeonGraph.addVertex(TreasureNode());
 			}
 
-			// Now connect them
+			// Connect the current node to the new node via a hallway
 			DefaultHallwayPath hallway;
 			dungeonGraph.addEdge(current, newNode, hallway);
-
 			
-
+			// Add the expansion depth
+			expansionDepth++;
+			
 			// Push this onto the stack so it can be expanded
 			nodeStack.push(newNode);
 			nodeCount++;
-		} else {
-			////////////////
-			// If not at entrance, maybe make a path back
-			if (Random::getBernoulliGate(100) && current->getObjAtVert().getNodeType() != NodeType::Entrance1) {
+		}
+
+		// If we decide not to expand, backtrack
+		if (shouldSplit) {
+
+			// Decide whether or not to create a return path
+			bool shouldReturnToEntrance = Random::getBernoulliGate(100);
+
+			// If not at entrance, make a path back
+			if (shouldReturnToEntrance && currentNodeType != NodeType::Entrance1) {
 				linkToStartWithReturnPath(current);
 			}
 
 			// Backtrack: stop expanding this path
 
 			// Never get rid of the source node, makes MIN_NODES do nothing
-			if (current->getObjAtVert().getNodeType() != NodeType::Entrance1) {
-				nodeStack.pop();
+			if (currentNodeType != NodeType::Entrance1) {
+				// How far back should we backtrack
+				for (int i = 0; i < minimumNodesBeforeSplit; i++) {
+					nodeStack.pop();
+				}
+
+				// Decide on a new minimum distance before potentially splitting
+				minimumNodesBeforeSplit = Random::getRandomInt(2, 4);
 			}
+
+			// We've split
+			expansionDepth = 0;
 		}
+		printStack(nodeStack);
+		std::cout << "expansionDepth: " << expansionDepth << std::endl;
 	}
 
-	linkToStartWithReturnPath(nodeStack.top());
+	// Connect the very last node ot the start
+//	linkToStartWithReturnPath(nodeStack.top());
 
 }
 

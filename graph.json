@@ -27,10 +27,10 @@
                 "node_type": 1
             },
             "to": {
-                "color": "lightblue",
+                "color": "lightcoral",
                 "id": 3,
-                "name": "Treasure Room!!!",
-                "node_type": 2
+                "name": "Combat Room",
+                "node_type": 1
             },
             "weight": {
                 "id": 4,
@@ -40,10 +40,10 @@
         },
         {
             "from": {
-                "color": "lightblue",
+                "color": "lightcoral",
                 "id": 3,
-                "name": "Treasure Room!!!",
-                "node_type": 2
+                "name": "Combat Room",
+                "node_type": 1
             },
             "to": {
                 "color": "lightcoral",
@@ -84,32 +84,89 @@
                 "node_type": 1
             },
             "to": {
-                "color": "lightcoral",
-                "id": 9,
-                "name": "Combat Room",
-                "node_type": 1
+                "color": "gold",
+                "id": 0,
+                "name": "Entrance Room",
+                "node_type": 0
             },
             "weight": {
+                "id": 9,
+                "name": "Return",
+                "path_type": 1
+            }
+        },
+        {
+            "from": {
+                "color": "gold",
+                "id": 0,
+                "name": "Entrance Room",
+                "node_type": 0
+            },
+            "to": {
+                "color": "lightblue",
                 "id": 10,
+                "name": "Treasure Room!!!",
+                "node_type": 2
+            },
+            "weight": {
+                "id": 11,
                 "name": "Hallway",
                 "path_type": 0
             }
         },
         {
             "from": {
-                "color": "lightcoral",
-                "id": 9,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "to": {
                 "color": "lightblue",
-                "id": 11,
+                "id": 10,
                 "name": "Treasure Room!!!",
                 "node_type": 2
             },
-            "weight": {
+            "to": {
+                "color": "lightcoral",
                 "id": 12,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "weight": {
+                "id": 13,
+                "name": "Hallway",
+                "path_type": 0
+            }
+        },
+        {
+            "from": {
+                "color": "lightcoral",
+                "id": 12,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "to": {
+                "color": "lightcoral",
+                "id": 14,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "weight": {
+                "id": 15,
+                "name": "Hallway",
+                "path_type": 0
+            }
+        },
+        {
+            "from": {
+                "color": "lightcoral",
+                "id": 14,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "to": {
+                "color": "lightblue",
+                "id": 16,
+                "name": "Treasure Room!!!",
+                "node_type": 2
+            },
+            "weight": {
+                "id": 17,
                 "name": "Hallway",
                 "path_type": 0
             }
@@ -117,56 +174,18 @@
         {
             "from": {
                 "color": "lightblue",
-                "id": 11,
+                "id": 16,
                 "name": "Treasure Room!!!",
                 "node_type": 2
             },
             "to": {
                 "color": "lightcoral",
-                "id": 13,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "weight": {
-                "id": 14,
-                "name": "Hallway",
-                "path_type": 0
-            }
-        },
-        {
-            "from": {
-                "color": "lightcoral",
-                "id": 13,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "to": {
-                "color": "lightcoral",
-                "id": 15,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "weight": {
-                "id": 16,
-                "name": "Hallway",
-                "path_type": 0
-            }
-        },
-        {
-            "from": {
-                "color": "lightcoral",
-                "id": 15,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "to": {
-                "color": "lightcoral",
-                "id": 17,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "weight": {
                 "id": 18,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "weight": {
+                "id": 19,
                 "name": "Hallway",
                 "path_type": 0
             }
@@ -174,34 +193,34 @@
         {
             "from": {
                 "color": "lightcoral",
-                "id": 17,
+                "id": 18,
                 "name": "Combat Room",
                 "node_type": 1
             },
             "to": {
-                "color": "lightcoral",
-                "id": 19,
-                "name": "Combat Room",
-                "node_type": 1
+                "color": "gold",
+                "id": 0,
+                "name": "Entrance Room",
+                "node_type": 0
             },
             "weight": {
                 "id": 20,
-                "name": "Hallway",
-                "path_type": 0
+                "name": "Return",
+                "path_type": 1
             }
         },
         {
             "from": {
-                "color": "lightcoral",
-                "id": 19,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "to": {
                 "color": "lightblue",
-                "id": 21,
+                "id": 10,
                 "name": "Treasure Room!!!",
                 "node_type": 2
+            },
+            "to": {
+                "color": "lightcoral",
+                "id": 21,
+                "name": "Combat Room",
+                "node_type": 1
             },
             "weight": {
                 "id": 22,
@@ -211,10 +230,10 @@
         },
         {
             "from": {
-                "color": "lightblue",
+                "color": "lightcoral",
                 "id": 21,
-                "name": "Treasure Room!!!",
-                "node_type": 2
+                "name": "Combat Room",
+                "node_type": 1
             },
             "to": {
                 "color": "lightblue",
@@ -236,10 +255,10 @@
                 "node_type": 2
             },
             "to": {
-                "color": "lightblue",
+                "color": "lightcoral",
                 "id": 25,
-                "name": "Treasure Room!!!",
-                "node_type": 2
+                "name": "Combat Room",
+                "node_type": 1
             },
             "weight": {
                 "id": 26,
@@ -249,16 +268,16 @@
         },
         {
             "from": {
-                "color": "lightblue",
-                "id": 25,
-                "name": "Treasure Room!!!",
-                "node_type": 2
-            },
-            "to": {
                 "color": "lightcoral",
-                "id": 27,
+                "id": 25,
                 "name": "Combat Room",
                 "node_type": 1
+            },
+            "to": {
+                "color": "lightblue",
+                "id": 27,
+                "name": "Treasure Room!!!",
+                "node_type": 2
             },
             "weight": {
                 "id": 28,
@@ -268,10 +287,10 @@
         },
         {
             "from": {
-                "color": "lightcoral",
+                "color": "lightblue",
                 "id": 27,
-                "name": "Combat Room",
-                "node_type": 1
+                "name": "Treasure Room!!!",
+                "node_type": 2
             },
             "to": {
                 "color": "lightblue",
@@ -293,10 +312,10 @@
                 "node_type": 2
             },
             "to": {
-                "color": "lightblue",
+                "color": "lightcoral",
                 "id": 31,
-                "name": "Treasure Room!!!",
-                "node_type": 2
+                "name": "Combat Room",
+                "node_type": 1
             },
             "weight": {
                 "id": 32,
@@ -306,65 +325,8 @@
         },
         {
             "from": {
-                "color": "lightblue",
+                "color": "lightcoral",
                 "id": 31,
-                "name": "Treasure Room!!!",
-                "node_type": 2
-            },
-            "to": {
-                "color": "lightcoral",
-                "id": 33,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "weight": {
-                "id": 34,
-                "name": "Hallway",
-                "path_type": 0
-            }
-        },
-        {
-            "from": {
-                "color": "lightcoral",
-                "id": 33,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "to": {
-                "color": "lightblue",
-                "id": 35,
-                "name": "Treasure Room!!!",
-                "node_type": 2
-            },
-            "weight": {
-                "id": 36,
-                "name": "Hallway",
-                "path_type": 0
-            }
-        },
-        {
-            "from": {
-                "color": "lightblue",
-                "id": 35,
-                "name": "Treasure Room!!!",
-                "node_type": 2
-            },
-            "to": {
-                "color": "lightcoral",
-                "id": 37,
-                "name": "Combat Room",
-                "node_type": 1
-            },
-            "weight": {
-                "id": 38,
-                "name": "Hallway",
-                "path_type": 0
-            }
-        },
-        {
-            "from": {
-                "color": "lightcoral",
-                "id": 37,
                 "name": "Combat Room",
                 "node_type": 1
             },
@@ -375,9 +337,85 @@
                 "node_type": 0
             },
             "weight": {
-                "id": 39,
+                "id": 33,
                 "name": "Return",
                 "path_type": 1
+            }
+        },
+        {
+            "from": {
+                "color": "lightcoral",
+                "id": 25,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "to": {
+                "color": "lightcoral",
+                "id": 34,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "weight": {
+                "id": 35,
+                "name": "Hallway",
+                "path_type": 0
+            }
+        },
+        {
+            "from": {
+                "color": "lightcoral",
+                "id": 34,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "to": {
+                "color": "lightcoral",
+                "id": 36,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "weight": {
+                "id": 37,
+                "name": "Hallway",
+                "path_type": 0
+            }
+        },
+        {
+            "from": {
+                "color": "lightcoral",
+                "id": 36,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "to": {
+                "color": "lightcoral",
+                "id": 38,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "weight": {
+                "id": 39,
+                "name": "Hallway",
+                "path_type": 0
+            }
+        },
+        {
+            "from": {
+                "color": "lightcoral",
+                "id": 38,
+                "name": "Combat Room",
+                "node_type": 1
+            },
+            "to": {
+                "color": "lightblue",
+                "id": 40,
+                "name": "Treasure Room!!!",
+                "node_type": 2
+            },
+            "weight": {
+                "id": 41,
+                "name": "Hallway",
+                "path_type": 0
             }
         }
     ],
@@ -395,10 +433,10 @@
             "node_type": 1
         },
         {
-            "color": "lightblue",
+            "color": "lightcoral",
             "id": 3,
-            "name": "Treasure Room!!!",
-            "node_type": 2
+            "name": "Combat Room",
+            "node_type": 1
         },
         {
             "color": "lightcoral",
@@ -413,46 +451,40 @@
             "node_type": 1
         },
         {
-            "color": "lightcoral",
-            "id": 9,
-            "name": "Combat Room",
-            "node_type": 1
-        },
-        {
             "color": "lightblue",
-            "id": 11,
+            "id": 10,
             "name": "Treasure Room!!!",
             "node_type": 2
         },
         {
             "color": "lightcoral",
-            "id": 13,
+            "id": 12,
             "name": "Combat Room",
             "node_type": 1
         },
         {
             "color": "lightcoral",
-            "id": 15,
-            "name": "Combat Room",
-            "node_type": 1
-        },
-        {
-            "color": "lightcoral",
-            "id": 17,
-            "name": "Combat Room",
-            "node_type": 1
-        },
-        {
-            "color": "lightcoral",
-            "id": 19,
+            "id": 14,
             "name": "Combat Room",
             "node_type": 1
         },
         {
             "color": "lightblue",
+            "id": 16,
+            "name": "Treasure Room!!!",
+            "node_type": 2
+        },
+        {
+            "color": "lightcoral",
+            "id": 18,
+            "name": "Combat Room",
+            "node_type": 1
+        },
+        {
+            "color": "lightcoral",
             "id": 21,
-            "name": "Treasure Room!!!",
-            "node_type": 2
+            "name": "Combat Room",
+            "node_type": 1
         },
         {
             "color": "lightblue",
@@ -461,16 +493,16 @@
             "node_type": 2
         },
         {
-            "color": "lightblue",
-            "id": 25,
-            "name": "Treasure Room!!!",
-            "node_type": 2
-        },
-        {
             "color": "lightcoral",
-            "id": 27,
+            "id": 25,
             "name": "Combat Room",
             "node_type": 1
+        },
+        {
+            "color": "lightblue",
+            "id": 27,
+            "name": "Treasure Room!!!",
+            "node_type": 2
         },
         {
             "color": "lightblue",
@@ -479,28 +511,34 @@
             "node_type": 2
         },
         {
-            "color": "lightblue",
+            "color": "lightcoral",
             "id": 31,
-            "name": "Treasure Room!!!",
-            "node_type": 2
+            "name": "Combat Room",
+            "node_type": 1
         },
         {
             "color": "lightcoral",
-            "id": 33,
+            "id": 34,
+            "name": "Combat Room",
+            "node_type": 1
+        },
+        {
+            "color": "lightcoral",
+            "id": 36,
+            "name": "Combat Room",
+            "node_type": 1
+        },
+        {
+            "color": "lightcoral",
+            "id": 38,
             "name": "Combat Room",
             "node_type": 1
         },
         {
             "color": "lightblue",
-            "id": 35,
+            "id": 40,
             "name": "Treasure Room!!!",
             "node_type": 2
-        },
-        {
-            "color": "lightcoral",
-            "id": 37,
-            "name": "Combat Room",
-            "node_type": 1
         }
     ]
 }

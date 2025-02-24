@@ -29,7 +29,7 @@ int main() {
 
 	d1.generate();
 
-	d1.dungeonGraph.printGraph();
+//	d1.dungeonGraph.printGraph();
 
 	d1.dungeonGraph.exploreGraphToJson("graph.json");
 	d1.dungeonGraph.runPythonVisualization();
